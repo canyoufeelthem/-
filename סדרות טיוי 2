@@ -1,0 +1,21 @@
+import time
+import os
+import sys
+
+# הצגת מסר על פריצה לכאורה
+print("המחשב שלך נמצא תחת התקפה!")
+time.sleep(2)
+
+# מחיקת המסך (עובד בעיקר ב-Windows)
+os.system('cls' if os.name == 'nt' else 'clear')
+
+# אחרי חמש שניות, מסך שחור ואז כתוב "עבדתי עליך"
+time.sleep(5)
+print("\033[30;47m")  # שינוי צבעים למסך כהה
+print("\n" * 100)  # להוסיף רווחים כדי שהמסך ייראה שחור
+time.sleep(1)
+
+# כתוב את הטקסט "עבדתי עליך"
+os.system('cls' if os.name == 'nt' else 'clear')
+print("\033[1;37m")  # שינוי צבע לצהוב/לבן
+print("עבדתי עליך!")
